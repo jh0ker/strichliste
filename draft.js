@@ -41,22 +41,30 @@ cc.depends(pool.User.all);
 cc.adds(pool.User);
 
 // GET /transaction
-cc.depends(pool.Transaction.all);
+cc
+    .depends(pool.Transaction.all);
 
 //GET /user/:userId
-cc.depends(pool.User(':userId'));
+cc
+    .depends(pool.User(':userId'));
 
 // GET /user/:userId/transaction
-cc.depends(pool.User(':userId'), pool.Transaction.all);
+cc
+    .depends(pool.User(':userId'), pool.Transaction.all);
 
 // POST /user/:userId/transaction
-cc.adds(pool.User(':userId'), pool.Transaction);
+cc
+    .depends(pool.User(':userId'))
+    .adds(pool.Transaction);
 
 // GET  /user/:userId/transaction/:transactionId
-cc.depends(pool.User(':userId'), pool.Transaction('transactionId'));
+cc
+    .depends(pool.User(':userId'), pool.Transaction('transactionId'));
 
 // GET /metrics
-cc.depends([pool.User.all, pool.Transaction.all]);
+cc
+    .depends([pool.User.all, pool.Transaction.all]);
 
 // GET  /transaction
-cc.depends(pool.Transaction.all);
+cc
+    .depends(pool.Transaction.all);
