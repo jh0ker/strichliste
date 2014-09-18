@@ -132,8 +132,8 @@ describe('furg', function () {
 
             user.has(transaction);
 
-            pool.register(new Resource('User'));
-            pool.register(new Resource('Transaction'));
+            pool.register(user);
+            pool.register(transaction);
         });
 
         describe('dependencies', function() {
@@ -225,7 +225,7 @@ describe('furg', function () {
 
         //TODO: delete
         describe.skip('dependents', function() {
-            describe('POST /user', function() {
+            describe('11POST /user', function() {
                 var cc;
                 before(function() {
                     cc = (new CacheConnection()).adds(pool.User);
@@ -237,7 +237,7 @@ describe('furg', function () {
                 });
             });
 
-            describe('POST /user/:userId/transaction', function() {
+            describe('11POST /user/:userId/transaction', function() {
                 var cc;
                 before(function() {
                     cc = (new CacheConnection())
