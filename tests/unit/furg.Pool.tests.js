@@ -5,7 +5,7 @@ var Resource = require('../../lib/furg/Resource');
 var ResourceQuantifier = require('../../lib/furg/ResourceQuantifier');
 var Pool = require('../../lib/furg/Pool');
 
-describe('furg', function () {
+describe.skip('furg', function () {
     describe('Pool', function() {
         var pool, a;
 

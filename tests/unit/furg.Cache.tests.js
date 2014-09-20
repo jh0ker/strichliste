@@ -4,7 +4,7 @@ var sinon = require('sinon');
 var Cache = require('../../lib/furg/Cache');
 var Pool = require('../../lib/furg/Pool');
 
-describe('furg', function () {
+describe.skip('furg', function () {
     describe('cache', function () {
         describe('cache set/get', function () {
             var c;
